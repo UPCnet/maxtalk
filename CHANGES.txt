@@ -1,5 +1,14 @@
-1.0 (2012-11-16)
----------------
+CHANGELOG
+=========
 
-Initial version, featuring:
+3.0 (2013-04-15)
+----------------
+
+* Updated to new conversation format 
+ 
+
+1.0 (2012-11-16)
+----------------
+
+* Initial version
 

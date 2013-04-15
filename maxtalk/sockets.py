@@ -13,9 +13,10 @@ class NamedUsersRoomsMixin(BroadcastMixin):
 
     def join(self, username):
         """Lets a user join a room on a specific Namespace."""
-        user = User(self.request)
+        user = User()
         user.fromDatabase(username)
-        subscribed_conversations = [a['hash'] for a in user.subscribedTo['items'] if a['object']['objectType'] == 'conversation']
+        print user.keys()
+        subscribed_conversations = [a['id'] for a in user.talkingIn['items'] if a['objectType'] == 'conversation']
         self.socket.rooms = set(subscribed_conversations)
         print 'User %s listening to conversations: %s' % (username, ', '.join(subscribed_conversations))
 
