@@ -14,7 +14,7 @@ requires = [
     'pyramid_who',
     'pymongo',
     'gevent-socketio',
-    'pyramid_socketio'
+#    'pyramid_socketio'
 
     ]
 
