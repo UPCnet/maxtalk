@@ -15,7 +15,7 @@ class NamedUsersRoomsMixin(BroadcastMixin):
         """Lets a user join a room on a specific Namespace."""
         user = User()
         user.request = self.request
-        user.mdb_collection = self.request.db.users
+        user.mdb_collection = self.request.registry.max_store.users
         user.fromDatabase(username)
         subscribed_conversations = [a['id'] for a in user.talkingIn['items'] if a['objectType'] == 'conversation']
         self.socket.rooms = set(subscribed_conversations)
